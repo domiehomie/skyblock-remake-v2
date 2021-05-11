@@ -1,0 +1,77 @@
+main: live.mufin.skyblock.Main
+name: Skyblock
+author: mufin
+version: BETA
+api-version: 1.13
+website: mufin.live
+prefix: SB
+
+
+commands:
+  skyblock:
+    description: Skyblock's main command.
+    aliases: sb
+    usage: /<command> [reload]
+  stats:
+    description: Displays your own, or someone else's stats.
+    usage: /<command> [player]
+  coins:
+    description: Displays your own, or someone else's balance.
+    aliases: balance
+    usage: /<command> [player]
+  setcoins:
+    description: Set the coins of a player.
+    aliases: setbalance
+    usage: /<command> <player> <amount>
+  setstat:
+    description: Set a specific statistic of a player.
+    usage: /<command> <player> <stat> <value>
+  scoreboardreload:
+    description: Reloads a players' scoreboard.
+    usage: /<command> <player>
+    aliases: [rlsb, sbrl, reloadscoreboard]
+  setlogger:
+    description: Allows you to enable and disable certain Skyblock logging features.
+    usage: /<command> <logtype> <true|false>
+    aliases: sl
+  item:
+    description: Gives you a Skyblock item from the items.yml file.
+    usage: /<command> <item> <amount> [player]
+  logger:
+    description: Shows you all the logging features, allowing you to enable/disable them by clicking.
+    usage: /<command>
+    aliases: log
+  setflight:
+    description: Lets you set the flight duration of a player.
+    usage: /<command> <player> <amount>
+  setbits:
+    description: Set the bits of a player.
+    usage: /<command> <player> <amount>
+  build:
+    description: Enables/Disables build mode.
+    usage: /<command>
+  goto:
+    description: Sends you to a specified world.
+    usage: /<command> <world>
+  collection:
+    description: Lets you see the specific collection of a player.
+    usage: /<command> <player> <collection>
+  setcollection:
+    description: Lets you set the collection of a player.
+    usage: /<command> <player> <collection> <amount>
+  createitems:
+    description: Creates all vanilla items into Skyblock items for you.
+    usage: /<command>
+  createprofile:
+    description: Creates a new profile.
+    usage: /<command>
+  deleteprofile:
+    description: Deletes a profile.
+    usage: /<command> <profile>
+  selectprofile:
+    description: Lets you select a profile.
+    usage: /<command> <profile>
+  island:
+    description: Sends you to your island.
+    usage: /<command>
+    aliases: is

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="skyblock-remake">
+    <output-path>C:/servers/SKYBLOCK V2 POG/plugins</output-path>
+    <root id="archive" name="skyblockremake.jar">
+      <element id="module-output" name="skyblockremake" />
+    </root>
+  </artifact>
+</component>

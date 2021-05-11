@@ -1,0 +1,18 @@
+SKYBLOCK_MENU:
+  name: "&aSkyBlock Menu &7(Right Click)"
+  material: "NETHER_STAR"
+  lore:
+    - "&7View all of your SkyBlock"
+    - "&7progress, including your Skills,"
+    - "&7Collections, Recipes, and more!"
+    - "&r "
+    - "&eClick to open!"
+MAGICAL_MUSHROOM_SOUP:
+  name: "&aMagical Mushroom Soup"
+  material: "MUSHROOM_STEW"
+  rarity: "UNCOMMON"
+  lore:
+    - "test soup"
+GUI_PANE:
+  name: "&r "
+  material: "BLACK_STAINED_GLASS_PANE"

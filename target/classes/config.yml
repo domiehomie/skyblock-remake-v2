@@ -1,0 +1,15 @@
+########################################################
+##                                                    ##
+##                SKYBLOCK CONFIG                     ##
+##                                                    ##
+########################################################
+
+# Information to log into MySQL server.
+# Leave useSSL at false, unless you know what you're doing.
+sql:
+  host: localhost
+  port: 3306
+  database: minecraft
+  username: plugin
+  password: plugin
+  useSSL: false
