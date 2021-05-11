@@ -26,6 +26,10 @@ sql:
   useSSL: false
 ```
 
+### Profiles
+
+Profile data is stored in the MySQL Database. When a player creates a profile, the plugin makes a copy of the `islandtemplate` world. This new world will be named `island_<id>`, where id is the profile id. The profile id is stored in the MySQL database. When a player creates a profile, they will be automatically switched to said profile, and can run `/is` to warp to their island. If you wish to switch to an already created profile, use the `/selectprofile <profile>` command. You can also delete your profile using the `/deleteprofile` command,
+
 ### Custom Items
 
 You can create custom items using the `items.yml` file. simply format your item like this: (Material list can be found [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html), stat value options can be found [here](#stat) and rarity options can be found [here](#rarity))
@@ -42,6 +46,8 @@ TEST_ITEM:
     DAMAGE: 100
     STRENGTH: 50
 ```
+
+These items will glow when dropped, and the glow color will change depending on their rarity. (Rainbow for rainbow glow)
 
 ### Skyblock menu
 
@@ -65,9 +71,11 @@ TEST_ITEM:
 
 `/build` - toggles build mode. When enabled, allows you to break and place blocks. When disabled, prevents you from doing so. Useful for running around mindlessly.
 
-### Goto command
+### Warp commands
 
-`/goto <place>` - Teleports you to the specified place in Skyblock.
+`/goto <world>` - Teleports you to the specified world.
+
+`/is` - Teleports you to Your Island.
 
 ###  Items
 
@@ -103,6 +111,14 @@ Coins are stored in the playerdata, but there are two commands you can use to ac
 
 `/setcollection <player> <collection> <amount>` - Accurately set the amount of items in a player's collection.
 
+### Profiles
+
+`/createprofile` - Creates a profile.
+
+`/deleteprofile <profile>` - Deletes a specific profile.
+
+`/selectprofile` - Selects a profile.
+
 ------
 
 ### * Logging
@@ -117,7 +133,7 @@ Coins are stored in the playerdata, but there are two commands you can use to ac
 
 ### Rarity
 
-`COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC, SUPREME, SPECIAL`
+`COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC, SUPREME, SPECIAL, RAINBOW`
 
 ### Stat
 
