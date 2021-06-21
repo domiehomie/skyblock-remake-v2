@@ -86,9 +86,10 @@ public class JoinEvent implements Listener {
             container.set(currentHealthKey, PersistentDataType.DOUBLE, container.get(maxHealthKey, PersistentDataType.DOUBLE));
 
         NamespacedKey manaKey = new NamespacedKey(plugin, "mana");
+        NamespacedKey currentManaKey = new NamespacedKey(plugin, "currentMana");
         NamespacedKey intelligenceKey = new NamespacedKey(plugin, Stat.INTELLIGENCE.toString());
         if(container.has(intelligenceKey, PersistentDataType.DOUBLE))
-            container.set(manaKey, PersistentDataType.DOUBLE, container.get(intelligenceKey, PersistentDataType.DOUBLE));
+            container.set(manaKey, PersistentDataType.DOUBLE, container.get(intelligenceKey, PersistentDataType.DOUBLE) + 100);
 
 
         /**

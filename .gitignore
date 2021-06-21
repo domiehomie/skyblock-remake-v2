@@ -4,9 +4,6 @@
 # Log file
 *.log
 
-# IntelliJ files
-.idea
-
 # BlueJ files
 *.ctxt
 
@@ -24,3 +21,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea/libraries/GlowAPI_v1_4_14_SNAPSHOT.xml
+.idea/libraries/server.xml
+skyblock-remake.iml
+.idea/libraries/server.xml

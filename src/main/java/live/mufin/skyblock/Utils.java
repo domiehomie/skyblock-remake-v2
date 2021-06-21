@@ -47,7 +47,7 @@ public class Utils {
 	 * @param player
 	 * @param message
 	 */
-	public void sendFormattedMessage(Player player, String message) {
+	public static void sendFormattedMessage(Player player, String message) {
 		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&aSB&8]&r " + message));
 		return;
 	}

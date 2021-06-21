@@ -24,19 +24,18 @@ public class ItemColourEvent implements Listener  {
     @EventHandler
     public void onDrop(PlayerDropItemEvent event) {
         event.getItemDrop().setGlowing(true);
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-
+//        new BukkitRunnable() {
+//            @Override
+//            public void run() {
                 NamespacedKey key = new NamespacedKey(plugin, "rarity");
                 try{
                     if(event.getItemDrop().getItemStack().getItemMeta().getPersistentDataContainer().has(key, PersistentDataType.STRING))
                         rarity = ItemManager.Rarity.valueOf(event.getItemDrop().getItemStack().getItemMeta().getPersistentDataContainer().get(key, PersistentDataType.STRING));
                     else
                         rarity = ItemManager.Rarity.COMMON;
-                }catch(IllegalArgumentException e) {
+                }catch(IllegalArgumentException ignored){}
 
-                }
+
                 switch (rarity) {
                     default:
                         GlowAPI.setGlowing(event.getItemDrop(), GlowAPI.Color.WHITE, Bukkit.getOnlinePlayers());
@@ -62,10 +61,8 @@ public class ItemColourEvent implements Listener  {
                         GlowAPI.setGlowing(event.getItemDrop(), GlowAPI.Color.WHITE, Bukkit.getOnlinePlayers());
                         break;
                 }
-
-
-            }
-        }.runTaskTimer(plugin, 0, 4);
+//            }
+//        }.runTaskTimer(plugin, 0, 4);
     }
 
     private void rainbowGlow(Item item) {
@@ -124,7 +121,7 @@ public class ItemColourEvent implements Listener  {
                 i++;
                 if(i==17) i = 1;
             }
-        }.runTaskTimer(plugin, 0, 4);
+        }.runTaskTimer(plugin, 0, 20);
     }
 
 }

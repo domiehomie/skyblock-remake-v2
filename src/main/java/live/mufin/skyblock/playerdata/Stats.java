@@ -142,7 +142,7 @@ public class Stats {
 					double intelligence = plugin.stats.getStatValue(Stat.INTELLIGENCE, player);
 					String text = ChatColor.RED + String.valueOf(Math.round(currentHealth)) + "/" + Math.round(maxHealth) + "❤    "  +
 							ChatColor.GREEN + Math.round(defense) + "❈ Defense"
-							+ ChatColor.AQUA + "    " + Math.round(mana + 100d) +  "/" + Math.round(intelligence + 100d) + "✎ Mana " ;
+							+ ChatColor.AQUA + "    " + Math.round(mana) +  "/" + Math.round(intelligence + 100d) + "✎ Mana " ;
 					TextComponent msg = new TextComponent(TextComponent
 							.fromLegacyText(text));
 					player.spigot().sendMessage(ChatMessageType.ACTION_BAR, msg);
@@ -161,10 +161,12 @@ public class Stats {
 						double mana = player.getPersistentDataContainer().get(manaKey, PersistentDataType.DOUBLE);
 						double intelligence = plugin.stats.getStatValue(Stat.INTELLIGENCE, player);
 
-						if(mana != intelligence) {
-							mana = mana + (intelligence / 50);
-							if(mana > intelligence) {
-								mana = intelligence;
+						double intel = intelligence + 100;
+
+						if(mana != intel) {
+							mana = mana + (intel / 50);
+							if(mana > intel) {
+								mana = intel;
 							}
 							player.getPersistentDataContainer().set(manaKey, PersistentDataType.DOUBLE, mana);
 						}

@@ -6,6 +6,8 @@ api-version: 1.13
 website: mufin.live
 prefix: SB
 
+depend:
+  - GlowAPI
 
 commands:
   skyblock:
@@ -75,3 +77,6 @@ commands:
     description: Sends you to your island.
     usage: /<command>
     aliases: is
+  repeat:
+    description: Repeats a command every x amount of ticks.
+    usage: /<command> <delay> <cmd>

@@ -205,6 +205,8 @@ public class ItemManager {
 			ItemStack item = new ItemStack(material);
 			ItemMeta meta = item.getItemMeta();
 
+			if(item.getItemMeta().getItemFlags() != null)
+				item.getItemMeta().getItemFlags().forEach(meta::removeItemFlags);
 			meta.setDisplayName(this.getItemName(itemname));
 			meta.setLore(this.getItemLore(itemname));
 			if (plugin.items.getConfig().getBoolean(itemname + ".enchanted")) {

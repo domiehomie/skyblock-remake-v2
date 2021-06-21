@@ -1,10 +1,10 @@
 package live.mufin.skyblock.playerdata;
 
 import live.mufin.skyblock.Main;
+import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
-import org.bukkit.craftbukkit.libs.org.apache.commons.io.FileUtils;
 import org.bukkit.entity.Player;
 
 import java.io.File;

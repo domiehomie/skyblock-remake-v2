@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:10}" host="192.168.2.31" id="96486062-d2ef-44b0-a53f-0ed5bf8d2de7" port="2022" customName="SkyblockSrv" nameFormat="CUSTOM" username="mufinlive.a3e755cd">
+        <option name="customName" value="SkyblockSrv" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

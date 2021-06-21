@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.inventivetalent.packetlistener:api:3.7.8-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/inventivetalent/packetlistener/api/3.7.8-SNAPSHOT/api-3.7.8-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/inventivetalent/packetlistener/api/3.7.8-SNAPSHOT/api-3.7.8-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/inventivetalent/packetlistener/api/3.7.8-SNAPSHOT/api-3.7.8-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

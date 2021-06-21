@@ -4,6 +4,7 @@ package live.mufin.skyblock.events;
 import live.mufin.skyblock.Main;
 import live.mufin.skyblock.playerdata.SQLProfileGetter;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -33,6 +34,7 @@ public class EnterPortalEvent implements Listener {
             Player player = event.getPlayer();
             NamespacedKey key = new NamespacedKey(plugin, "profile");
             try{
+                Bukkit.getConsoleSender().sendMessage(ChatColor.RED + player.getPersistentDataContainer().get(key, PersistentDataType.STRING));
                 SQLProfileGetter.Profile profile = SQLProfileGetter.Profile.valueOf(player.getPersistentDataContainer().get(key, PersistentDataType.STRING));
                 String world = "island_" + plugin.profiles.getProfile(player.getUniqueId(), profile);
                 Bukkit.dispatchCommand(player, "goto " + world);

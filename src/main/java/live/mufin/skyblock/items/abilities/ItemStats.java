@@ -29,8 +29,8 @@ public class ItemStats {
 			public void run() {
 				for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 
-					if (p.getInventory().getItemInMainHand() == null
-							|| p.getInventory().getItemInMainHand().getItemMeta() == null) {
+					p.getInventory().getItemInMainHand();
+					if (p.getInventory().getItemInMainHand().getItemMeta() == null) {
 						for (Stat stat : Stat.values()) {
 							NamespacedKey key = new NamespacedKey(plugin, "item_" + stat.toString());
 							p.getPersistentDataContainer().set(key, PersistentDataType.DOUBLE, 0.0d);

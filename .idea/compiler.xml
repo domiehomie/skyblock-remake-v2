@@ -6,8 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="skyblockremake" />
+        <module name="skyblock-remake" />
+        <module name="skyblock-remake-v2" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="skyblock-remake" target="8" />
+      <module name="skyblock-remake-v2" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

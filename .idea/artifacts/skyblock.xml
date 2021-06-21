@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="skyblock">
+    <output-path>C:/servers/SKYBLOCK V2 POG/plugins</output-path>
+    <root id="archive" name="skyblock-remake.jar">
+      <element id="module-output" name="skyblock-remake" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.9.0/commons-io-2.9.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

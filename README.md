@@ -1,4 +1,4 @@
-# Hypixel Skyblock Remake v2
+# Hypixel Skyblock Remake
 
 A project where I, mufin, am trying to recrate Hypixel Skyblock in Spigot. There is currently no download available, however you can import the project into your IDE of choice, along with adding the spigot jar as a dependency to export it.
 
@@ -26,10 +26,6 @@ sql:
   useSSL: false
 ```
 
-### Profiles
-
-Profile data is stored in the MySQL Database. When a player creates a profile, the plugin makes a copy of the `islandtemplate` world. This new world will be named `island_<id>`, where id is the profile id. The profile id is stored in the MySQL database. When a player creates a profile, they will be automatically switched to said profile, and can run `/is` to warp to their island. If you wish to switch to an already created profile, use the `/selectprofile <profile>` command. You can also delete your profile using the `/deleteprofile` command,
-
 ### Custom Items
 
 You can create custom items using the `items.yml` file. simply format your item like this: (Material list can be found [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html), stat value options can be found [here](#stat) and rarity options can be found [here](#rarity))
@@ -46,8 +42,6 @@ TEST_ITEM:
     DAMAGE: 100
     STRENGTH: 50
 ```
-
-These items will glow when dropped, and the glow color will change depending on their rarity. (Rainbow for rainbow glow)
 
 ### Skyblock menu
 
@@ -71,21 +65,19 @@ These items will glow when dropped, and the glow color will change depending on 
 
 `/build` - toggles build mode. When enabled, allows you to break and place blocks. When disabled, prevents you from doing so. Useful for running around mindlessly.
 
-### Warp commands
+### Goto command
 
-`/goto <world>` - Teleports you to the specified world.
-
-`/is` - Teleports you to Your Island.
+`/goto <place>` - Teleports you to the specified place in Skyblock.
 
 ###  Items
 
-`/item <item> <amount> [player]` - Gives you or another player the specified item.
+`/item <item> <amount> [player]` - Gives you or another player the specified item.
 
 `/createitems` - Turns all vanilla items into Skyblock items.
 
 ### * Scoreboard
 
-`/scoreboardreload <player>` - Reloads the scoreboard for a specific player. 
+`/scoreboardreload <player>` - Reloads the scoreboard for a specific player. 
 
 ------
 
@@ -95,29 +87,21 @@ Coins are stored in the playerdata, but there are two commands you can use to ac
 
 `/coins [player]` - Returns your, or someone else's balance.
 
-`/setcoins <player> <amound>` - Lets you set a player's balance.
+`/setcoins <player> <amound>` - Lets you set a player's balance.
 
-`/setbits <player> <amount>` - Same as setcoins, but for bits.
+`/setbits <player> <amount>` - Same as setcoins, but for bits.
 
-`/setflight <player> <seconds>` - Sets the flight duration for a player.
+`/setflight <player> <seconds>` - Sets the flight duration for a player.
 
 ### Stats and collections
 
-`/stats [player]` - View your, or someone else's stats.
+`/stats [player]` - View your, or someone else's stats.
 
-`/setstat <player> <stat> <value>` - Accurately set a certain stat of a player.
+`/setstat <player> <stat> <value>` - Accurately set a certain stat of a player.
 
-`/collection <player> <collection>` - View the amount of items a player has in their collections.
+`/collection <player> <collection>` - View the amount of items a player has in their collections.
 
-`/setcollection <player> <collection> <amount>` - Accurately set the amount of items in a player's collection.
-
-### Profiles
-
-`/createprofile` - Creates a profile.
-
-`/deleteprofile <profile>` - Deletes a specific profile.
-
-`/selectprofile` - Selects a profile.
+`/setcollection <player> <collection> <amount>` - Accurately set the amount of items in a player's collection.
 
 ------
 
@@ -125,7 +109,7 @@ Coins are stored in the playerdata, but there are two commands you can use to ac
 
 `/logger` - Gives you clickable options for enabling/disabling certain logging features.
 
-`/setlogger <feature> <true|false>` - Lets you set the logging features with a command.
+`/setlogger <feature> <true|false>` - Lets you set the logging features with a command.
 
 
 
@@ -133,7 +117,7 @@ Coins are stored in the playerdata, but there are two commands you can use to ac
 
 ### Rarity
 
-`COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC, SUPREME, SPECIAL, RAINBOW`
+`COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC, SUPREME, SPECIAL`
 
 ### Stat
 

@@ -1,6 +1,9 @@
 package live.mufin.skyblock;
 
 import live.mufin.skyblock.commands.tabcompleters.*;
+import live.mufin.skyblock.items.abilities.*;
+import live.mufin.skyblock.items.abilities.manager.AbilityHandler;
+import live.mufin.skyblock.items.abilities.manager.ItemAbility;
 import live.mufin.skyblock.playerdata.MySQL;
 import live.mufin.skyblock.commands.*;
 import live.mufin.skyblock.events.*;
@@ -14,8 +17,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import live.mufin.skyblock.gui.SkyblockMenu;
 import live.mufin.skyblock.items.ItemDataManager;
 import live.mufin.skyblock.items.ItemManager;
-import live.mufin.skyblock.items.abilities.ItemStats;
-import live.mufin.skyblock.items.abilities.MushroomSoup;
 import live.mufin.skyblock.playerdata.Stats;
 import live.mufin.skyblock.scoreboards.RegularScoreBoard;
 
@@ -35,7 +36,9 @@ public class Main extends JavaPlugin {
 	public SQLProfileGetter profiles;
 	private MushroomSoup soup;
 	private ItemStats itemStats;
-	
+
+	public static JavaPlugin plugin;
+
 	public void onEnable() {
 		this.saveDefaultConfig(); // Initialize config
 
@@ -50,6 +53,8 @@ public class Main extends JavaPlugin {
 		this.stats = new Stats(this);
 		this.itemStats = new ItemStats(this);
 		this.profiles = new SQLProfileGetter(this);
+
+		plugin = this;
 
 		// Connect to MySQL
 		try{
@@ -70,6 +75,21 @@ public class Main extends JavaPlugin {
 		this.getServer().createWorld(WorldCreator.name("islandtemplate"));
 
 
+		// Initializing BukkitRunnables
+		soup.runnable();
+		itemStats.runnable();
+		stats.runnable();
+
+		this.registerEvents();
+		this.registerCommands();
+	}
+
+	public void onDisable() {
+		// Disconnect from SQL server
+		database.disconnect();
+	}
+
+	private void registerCommands() {
 		// Initializing CommandExecutors
 		this.getCommand("skyblock").setExecutor(new SkyblockCommand(this));
 		this.getCommand("stats").setExecutor(new StatsCommand(this));
@@ -91,6 +111,7 @@ public class Main extends JavaPlugin {
 		this.getCommand("deleteprofile").setExecutor(new DeleteProfileCommand(this));
 		this.getCommand("selectprofile").setExecutor(new SelectProfileCommand(this));
 		this.getCommand("island").setExecutor(new IslandCommand(this));
+		this.getCommand("repeat").setExecutor(new RepeatCommand());
 
 		// Initializing TabCompleters
 		this.getCommand("setlogger").setTabCompleter(new SetLoggerTabComplete());
@@ -101,7 +122,10 @@ public class Main extends JavaPlugin {
 		this.getCommand("setcollection").setTabCompleter(new SetCollectionTabComplete());
 		this.getCommand("deleteprofile").setTabCompleter(new SeleteProfileTabComplete());
 		this.getCommand("selectprofile").setTabCompleter(new SeleteProfileTabComplete());
+	}
 
+
+	private void registerEvents() {
 		// Initializing events
 		this.getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
 		this.getServer().getPluginManager().registerEvents(new RegularScoreBoard(this), this);
@@ -115,16 +139,7 @@ public class Main extends JavaPlugin {
 		this.getServer().getPluginManager().registerEvents(new ItemPickupEvent(), this);
 		this.getServer().getPluginManager().registerEvents(new ItemColourEvent(this), this);
 		this.getServer().getPluginManager().registerEvents(new ProfileSignEvents(), this);
-
-
-		// Initializing BukkitRunnables
-		soup.runnable();
-		itemStats.runnable();
-		stats.runnable();
-	}
-
-	public void onDisable() {
-		// Disconnect from SQL server
-		database.disconnect();
+		this.getServer().getPluginManager().registerEvents(new AbilityHandler(), this);
+		this.getServer().getPluginManager().registerEvents(new RepeatCommand(), this);
 	}
 }
